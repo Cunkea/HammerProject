@@ -55,7 +55,6 @@ namespace Project.Controllers
         {
             if (ModelState.IsValid)
             {
-                employee.lastModifyDate = DateTime.Now;
                 db.Employee.Add(employee);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
@@ -90,7 +89,6 @@ namespace Project.Controllers
         {
             if (ModelState.IsValid)
             {
-                employee.lastModifyDate = DateTime.Now;
                 db.Entry(employee).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
